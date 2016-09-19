@@ -45,41 +45,7 @@ function generateTable() {
 
 //logic for bresenham's line drawing algorithm
 function bresenDraw() {
-    //var isSlopeSteep = Boolean(Math.abs(y1 - y0) > Math.abs(x1 - x0));
-
-    //if (isSlopeSteep) {
-    //    swap_vals(x1, y1);
-    //    swap_vals(x0, y0);
-    //}
     
-    //if(Math.abs(x0) > Math.abs(x1))
-    //{
-    //    swap_vals(x0, x1);
-    //    swap_vals(y0, y1);
-    //}
-    //var dx = Math.abs(x1) - Math.abs(x0);
-    //var dy = Math.abs(y1 - y0);
-    //var error = dx / 2;
-    //var ystep = (y0 < y1) ? 1 : -1;
-    //var y_ = y0;
-    //var maxX = x1;
-    //for (var i = x0; i < maxX; i++) {
-    //    if (isSlopeSteep) {
-    //        //y,i
-    //        drawing(parseInt(Math.round(y_)), i);
-    //    }
-    //    else {
-    //        //i,y
-    //        drawing(i, parseInt(Math.round(y_)));
-    //    }
-    //    error -= dy;
-    //    if(error < 0)
-    //    {
-    //        y_ += ystep;
-    //        error += dx;
-    //    }
-    //}
-
     //Bresenham's algo simple
     var dx = x1 - x0;
     var sx = (dx < 0) ? -1 : 1;
@@ -106,6 +72,7 @@ function bresenDraw() {
     drawing(x1, y1);
 }
 
+//Couldn't find function to swap in JS, so made one
 function swap_vals(a,b) {
     var temp = a;
     a = b;
@@ -120,6 +87,7 @@ function drawing(x,y) {
     console.log("drawing: "+"(" + x + "," + y + ")");
 }
 
+//reset function
 function reset() {
     var element = $('table').find('td');
     element.removeClass("red");
